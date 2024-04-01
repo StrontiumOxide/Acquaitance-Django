@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Рецепты</title>
 </head>
-<body>
-{% for ingredient, amount in recipe.items %}
-    <p>{{ ingredient }}: {{ amount }}</p>
-{% empty %}
-    <p>Такого рецепта не знаю :(</p>
-{% endfor %}
+<body style="background-color: black;">
+    <p style="font-size: 50px; color: yellow;">Количество ингредиентов: {{dish}}</p>
+    <ul style="font-size: 30px;">
+        {% for ingredient, amount in recipe.items %}
+            <li style="color: yellow;">{{ ingredient }}: {{ amount }}</li>
+        {% empty %}
+            <p>Такого рецепта не знаю :(</p>
+        {% endfor %}
+    </ul>
+    <p style="color: yellow;font-size: 40px;">P.S. Не забудь указать количество человек: ?count=<Ваше число></p>
+    <a href="/" style="color: yellowgreen;">Назад</a>
 </body>
 </html>
